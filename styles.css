@@ -1,0 +1,76 @@
+:root {
+    --content-primary: #fff;
+    --content-secondary: #c7c9cc;
+    --content-tertiary: #d9d9d9;
+    --content-brand: #c58de7;
+    --color-inverse: #030203;
+
+    --bg-primary: #020202;
+    --bg-secondary: #111012;
+    --bg-tertiary: #24222e;
+    --bg-brand: #c58de7;
+    --bg-gray: #3d3d3d;
+
+    --pink: #d586e0;
+    --blue: #91a1fa;
+    --green: #77c0af;
+    --lime: #d1dc97;
+    --red: #e9a9b3;
+
+    --gradient-border: #77C0AF 0%, #D1DC97 14.84%, #E9A9B3 32.15%, #D586E0 65.79%, #91A1FA 84.58%;
+    --gradient-background: #D586E0 0%, #91A1FA 98.93%;
+    --gradient-content: #C7C9CC 0%, #3D3D3D 100%;
+
+    --ff-sora: 'Sora', sans-serif;
+    --ff-roboto-mono: "Roboto Mono", monospace;
+    --ff-roboto-flex: "Roboto Flex", sans-serif;
+
+    --display-lg: 900 4.5rem/1.3 var(--ff-sora);
+    --display-md: 900 2.5rem/1.3 var(--ff-sora);
+    --display-sm: 700 2rem/1.3 var(--ff-sora);
+
+    --overline: 700 1rem/1.5 var(--ff-roboto-mono);
+
+    --paragraph-lg: 500 1rem/1.5 var(--ff-roboto-flex);
+    --paragraph-md: 500 .875rem/1.5 var(--ff-roboto-flex);
+    --paragraph-sm: 500 .75rem/1.5 var(--ff-roboto-flex);
+    --label-md: 700 1.25rem/1.5 var(--ff-roboto-flex);
+    --label-sm: 700 1rem/1.5 var(--ff-roboto-flex);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--content-primary);
+    max-width: 24.4rem;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    justify-content: center;
+
+    margin-top: 2.75rem;
+
+    p {
+        color: var(--content-primary);
+        font: 900 1.5rem/1.3 var(--ff-sora);
+        text-transform: uppercase;
+    }
+}
+
+main {
+    padding-inline: 2.25rem;
+}
+
+.title: {
+    padding-top: 2.875rem;
+}
