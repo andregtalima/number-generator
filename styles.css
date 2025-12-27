@@ -1,76 +1,139 @@
 :root {
-    --content-primary: #fff;
-    --content-secondary: #c7c9cc;
-    --content-tertiary: #d9d9d9;
-    --content-brand: #c58de7;
-    --color-inverse: #030203;
+  --content-primary: #fff;
+  --content-secondary: #c7c9cc;
+  --content-tertiary: #d9d9d9;
+  --content-brand: #c58de7;
+  --color-inverse: #030203;
 
-    --bg-primary: #020202;
-    --bg-secondary: #111012;
-    --bg-tertiary: #24222e;
-    --bg-brand: #c58de7;
-    --bg-gray: #3d3d3d;
+  --bg-primary: #020202;
+  --bg-secondary: #111012;
+  --bg-tertiary: #24222e;
+  --bg-brand: #c58de7;
+  --bg-gray: #3d3d3d;
 
-    --pink: #d586e0;
-    --blue: #91a1fa;
-    --green: #77c0af;
-    --lime: #d1dc97;
-    --red: #e9a9b3;
+  --pink: #d586e0;
+  --blue: #91a1fa;
+  --green: #77c0af;
+  --lime: #d1dc97;
+  --red: #e9a9b3;
 
-    --gradient-border: #77C0AF 0%, #D1DC97 14.84%, #E9A9B3 32.15%, #D586E0 65.79%, #91A1FA 84.58%;
-    --gradient-background: #D586E0 0%, #91A1FA 98.93%;
-    --gradient-content: #C7C9CC 0%, #3D3D3D 100%;
+  --gradient-border: #77c0af 0%, #d1dc97 14.84%, #e9a9b3 32.15%, #d586e0 65.79%,
+    #91a1fa 84.58%;
+  --gradient-background: #d586e0 0%, #91a1fa 98.93%;
+  --gradient-content: #c7c9cc 0%, #3d3d3d 100%;
 
-    --ff-sora: 'Sora', sans-serif;
-    --ff-roboto-mono: "Roboto Mono", monospace;
-    --ff-roboto-flex: "Roboto Flex", sans-serif;
+  --ff-sora: "Sora", sans-serif;
+  --ff-roboto-mono: "Roboto Mono", monospace;
+  --ff-roboto-flex: "Roboto Flex", sans-serif;
 
-    --display-lg: 900 4.5rem/1.3 var(--ff-sora);
-    --display-md: 900 2.5rem/1.3 var(--ff-sora);
-    --display-sm: 700 2rem/1.3 var(--ff-sora);
+  --display-lg: 900 4.5rem/1.3 var(--ff-sora);
+  --display-md: 900 2.5rem/1.3 var(--ff-sora);
+  --display-sm: 700 2rem/1.3 var(--ff-sora);
 
-    --overline: 700 1rem/1.5 var(--ff-roboto-mono);
+  --overline: 700 1rem/1.5 var(--ff-roboto-mono);
 
-    --paragraph-lg: 500 1rem/1.5 var(--ff-roboto-flex);
-    --paragraph-md: 500 .875rem/1.5 var(--ff-roboto-flex);
-    --paragraph-sm: 500 .75rem/1.5 var(--ff-roboto-flex);
-    --label-md: 700 1.25rem/1.5 var(--ff-roboto-flex);
-    --label-sm: 700 1rem/1.5 var(--ff-roboto-flex);
+  --paragraph-lg: 500 1rem/1.5 var(--ff-roboto-flex);
+  --paragraph-md: 500 0.875rem/1.5 var(--ff-roboto-flex);
+  --paragraph-sm: 500 0.75rem/1.5 var(--ff-roboto-flex);
+  --label-md: 700 1.25rem/1.5 var(--ff-roboto-flex);
+  --label-sm: 700 1rem/1.5 var(--ff-roboto-flex);
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background-color: var(--bg-primary);
-    color: var(--content-primary);
-    max-width: 24.4rem;
-    width: 100%;
-    margin: 0 auto;
+  background-color: var(--bg-primary);
+  color: var(--content-primary);
+  max-width: 24.4rem;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .logo {
-    display: flex;
-    align-items: center;
-    gap: .75rem;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  justify-content: center;
 
-    margin-top: 2.75rem;
+  margin-top: 2.75rem;
 
-    p {
-        color: var(--content-primary);
-        font: 900 1.5rem/1.3 var(--ff-sora);
-        text-transform: uppercase;
-    }
+  p {
+    color: var(--content-primary);
+    font: 900 1.5rem/1.3 var(--ff-sora);
+    text-transform: uppercase;
+  }
 }
 
 main {
-    padding-inline: 2.25rem;
+  padding-inline: 2.25rem;
 }
 
-.title: {
-    padding-top: 2.875rem;
+.title {
+  margin-top: 2.875rem;
+
+  span {
+    font: var(--overline);
+    text-transform: uppercase;
+    background: -webkit-linear-gradient(var(--gradient-content));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  h1 {
+    font: var(--display-md);
+    text-transform: uppercase;
+    margin-top: 0.5rem;
+  }
+}
+
+.info {
+  margin-top: 2.625rem;
+
+  h3 {
+    font: var(--label-md);
+    text-transform: uppercase;
+  }
+
+  p {
+    color: var(--content-tertiary);
+    font: var(--paragraph-md);
+  }
+
+  form {
+    margin-top: 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+
+    .input-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+
+      label {
+        font: var(--label-sm);
+        color: var(--content-secondary);
+        text-transform: uppercase;
+      }
+
+      input {
+        width: 5.34rem;
+        height: 3.5rem;
+        border-radius: 0.5rem;
+
+        background-color: var(--bg-secondary);
+        border: none;
+
+        font: var(--display-sm);
+        color: var(--content-primary);
+        text-align: center;
+      }
+    }
+  }
 }
