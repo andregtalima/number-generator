@@ -39,6 +39,12 @@
   --label-sm: 700 1rem/1.5 var(--ff-roboto-flex);
 }
 
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -104,7 +110,6 @@ main {
   }
 
   form {
-    
     width: 100%;
 
     .info-number {
@@ -112,77 +117,203 @@ main {
       display: flex;
       align-items: center;
       gap: 0.75rem;
+      cursor: pointer;
 
       .input-wrapper {
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 0.5rem;
-  
+        position: relative;
+
         label {
           font: var(--label-sm);
           color: var(--content-secondary);
           text-transform: uppercase;
         }
-  
+        
         input[type="text"] {
           width: 5.34rem;
           height: 3.5rem;
           border-radius: 0.5rem;
-  
+
           background-color: var(--bg-secondary);
           border: none;
-  
+
           font: var(--display-sm);
           color: var(--content-primary);
           text-align: center;
         }
+
+        &:hover::after {
+          content: "";
+          background: linear-gradient(90deg, var(--gradient-border));
+          inset: -.1rem;
+          position: absolute;
+          top: 1.9rem;
+          border-radius: .5rem;
+          z-index: -1;
+        }
+
+        &:hover {
+          & > label {
+            color: var(--content-brand);
+          }
+        }
+
       }
     }
 
     .checkbox {
-        margin-top: 1.25rem;
+      margin-top: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      input[type="checkbox"] {
+        position: relative;
+        width: 1.875rem;
+        height: 1.25rem;
+        border-radius: 1.25rem;
+        outline: none;
+        -webkit-appearance: none;
+        background: var(--content-tertiary);
+        inset: 0;
+        cursor: pointer;
+
+        &::before {
+          content: "";
+          position: absolute;
+          width: 0.875rem;
+          height: 0.875rem;
+          background: var(--content-primary);
+          border-radius: 50%;
+          top: 15%;
+          left: 5%;
+          transition: 0.5s;
+        }
+
+        &:checked {
+          background: linear-gradient(90deg, var(--gradient-background));
+        }
+
+        &:checked::before {
+          left: calc(100% - 1rem);
+        }
+      }
+
+      label {
+        font: var(--paragraph-sm);
+        color: var(--content-tertiary);
+      }
+    }
+
+    button {
+      margin-top: 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+
+      background-color: var(--bg-tertiary);
+      border: none;
+      margin-inline: auto;
+      padding: 1rem;
+      width: 100%;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      border: 2px solid transparent;
+
+      font: var(--label-md);
+      color: var(--content-primary);
+      text-transform: uppercase;
+
+      position: relative;
+     
+      &::after,
+      &::before {
+        content: "";
+        position: absolute;
+        background: linear-gradient(var(--angle), var(--gradient-border));
+        inset: -4px;
+        border-radius: inherit;
+        z-index: -1;
+
+        animation: spin 0.3s linear infinite;
+        opacity: 0;
+      }
+
+      &:hover::after,
+      &:hover::before {
+        opacity: 1;
+      }
+
+      &:hover > img {
+         animation: 3s move linear infinite;
+      }
+    }
+  }
+}
+
+footer {
+  padding-inline: 2.25rem;
+  margin-inline: auto;
+  margin-top: 5rem;
+  width: 100%;
+
+  & > .cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2.25rem;
+
+    & > .card {
+      & > .card-title {
         display: flex;
         align-items: center;
         gap: .5rem;
 
-        input[type="checkbox"] {
-            position: relative;
-            width: 1.875rem;
-            height: 1.25rem;
-            border-radius: 1.25rem;
-            outline: none;
-            -webkit-appearance: none;
-            background: var(--content-tertiary);
-            inset: 0;
-            cursor: pointer;
-
-            &::before {
-                content: "";
-                position: absolute;
-                width: .875rem;
-                height: .875rem;
-                background: var(--content-primary);
-                border-radius: 50%;
-                top: 15%;
-                left: 5%;
-                transition: .5s;
-            }
-
-            &:checked {
-                background: linear-gradient(90deg, var(--gradient-background));
-            }
-
-            &:checked::before {
-                left: calc(100% - 1rem);
-            }
+        & > span {
+          font: var(--paragraph-md);
+          color: var(--content-brand);
         }
+      }
 
-        label {
-            font: var(--paragraph-sm);
-            color: var(--content-tertiary);
-        }
+      & > p {
+        font: var(--paragraph-sm);
+        color: var(--content-secondary);
+        padding-left: 1.8rem;
+        margin-top: .2rem;
+      }
     }
-
   }
+}
+
+@keyframes spin {
+  from {
+    --angle: 0deg;
+  }
+
+  to {
+    --angle: 360deg;
+  }
+}
+
+@keyframes move {
+  0% {transform: translateX(0px);}
+  10% {transform: translateX(2px);}
+  15% {transform: translateX(2px);}
+  20% {transform: translateX(3px);}
+  25% {transform: translateX(4px);}
+  30% {transform: translateX(6px);}
+  35% {transform: translateX(8px);}
+  40% {transform: translateX(10px);}
+  45% {transform: translateX(12px);}
+  55% {transform: translateX(10px);}
+  60% {transform: translateX(8px);}
+  65% {transform: translateX(6px);}
+  75% {transform: translateX(4px);}
+  80% {transform: translateX(2px);}
+  100% {transform: translateX(0px);}
 }
