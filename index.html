@@ -48,13 +48,13 @@
             Defina o intervalo e a quantidade de números, clique em "Sortear" e veja os resultados na tela. É rápido e fácil!
           </p>
         </section>
-        <form method="post" enctype="multipart/form-data">
+        <form>
           <fieldset>
             <div class="flex">
               <div class="ipt-number">
                 <label for="draw">Números</label>
                 <div class="input-wrapper">
-                  <input type="text" name="draw" class="nan" value="2">
+                  <input type="text" id="draw" name="draw" class="nan" value="2">
                 </div>
               </div>
               <div class="ipt-number">
@@ -71,12 +71,12 @@
               </div>
             </div>
             <div id="checkbox">
-              <div class="btn">
-                <input type="checkbox" name="check" id="check" checked>
-              </div>
               <div>
-                <label for="check">Não repetir número</label>
+                <div id="btn">
+                  <input type="checkbox" name="check" id="check" checked>
+                </div>
               </div>
+                <label for="check">Não repetir número</label>
             </div>
           </fieldset>
           <button id="draw-one">

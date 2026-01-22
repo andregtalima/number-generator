@@ -37,6 +37,7 @@
   --display-sm: 700 2rem/1.3 var(--ff-sora);
 
   --overline: 700 1rem/1.5 var(--ff-roboto-mono);
+  --number-mono: 600 3rem/1.5 var(--ff-roboto-mono);
 
   --paragraph-lg: 500 1rem/1.5 var(--ff-roboto-flex);
   --paragraph-md: 500 0.875rem/1.5 var(--ff-roboto-flex);
